@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Selector Baisc</title>
+    <style>
+        li.select { color: red; }
+        
+        input[type="text"] { background: red; }
+        input[type="password"] { background: blue; }
+
+        #header > h1 { color: red; }
+        #section > h1 { color: orange; }
+
+        table > tbody > tr > th {
+            color:red;
+        }
+
+        h1:hover { color: red; }
+        h1:active { color: blue; }
+
+        input:enabled { background-color: white; }
+        input:disabled { background-color: gray; }
+        input:focus { background-color: orange; }
+
+        /* ul { overflow: hidden; }
+        li {
+            list-style: none;
+            float: left; padding: 15px;
+        }
+        li:first-child { border-radius: 10px 0 0 10px; }
+        li:last-child {border-radius: 0 10px 10px 0; }
+        li:nth-child(2n) {background-color: #FF0003; }
+        li:nth-child(2n+1) { background-color: #800000; } */
+
+        h1 + h2 { color: red; }
+        h1 ~ h2 { background-color: orange; }
+
+        input[type=checkbox]:checked + div {
+            height: 0px;
+        }
+            div {
+                overflow: hidden;
+                width: 650px; height: 300px;
+
+                -ms-transition-duration: 1s;
+                -webkit-transition=duration: 1s;
+                -moz-transition-duration: 1s;
+                -o-transition-duration: 1s;
+                transition-duration: 1s;
+            }
+        
+        li > a:first-child { color: red; }
+    </style>
+</head>
+<body>
+    <h1 class="select">제목 글자</h1>
+    <ul>
+        <li class="select">사과</li>
+        <li>바나나</li>
+        <li>오렌지</li>
+        <li>감</li>
+    </ul><br><br>
+
+    <form>
+        <input type="text">
+        <input type="password">
+    </form><br><br>
+
+    <div id="header">
+        <h1 class="title">Lorem ipsum</h1>
+        <div id="nav">
+            <h1>Navigation</h1>
+        </div>
+    </div>
+    <div id="section">
+        <h1 class="title">Lorem ipsum</h1>
+        <p>Lorem ipsum dol or sit amet, consectetur adi pi scing elit.</p>
+    </div><br><br>
+
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>지역</th>
+        </tr>
+        <tr>
+            <td>윤인성</td>
+            <td>서울특별시 강서구 내발산동</td>
+        </tr>
+    </table><br><br>
+
+    <h2>사용 가능</h2>
+    <input>
+    <h2>사용 불가능</h2>
+    <input disabled="disabled"><br><br>
+
+    <ul>
+        <li>첫 번째</li>
+        <li>두 번째</li>
+        <li>세 번째</li>
+        <li>네 번째</li>
+        <li>다섯 번째</li>
+        <li>여섯 번째</li>
+        <li>일곱 번째</li>
+    </ul><br><br>
+    
+    <h1>Header - 1</h1>
+    <h2>Header - 2</h2>
+    <h2>Header - 2</h2>
+    <h2>Header - 2</h2>
+    <h2>Header - 2</h2><br><br>
+
+    <input type="checkbox" />
+    <div>
+        <h1>Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, conspectetur adipiscing elit.</p>
+    </div><br><br>
+
+    <ul>
+        <li><a href="#">주의 사항</a></li>
+        <li><a href="#">주의 사항</a></li>
+        <li><a href="#">주의 사항</a></li>
+        <li><a href="#">주의 사항</a></li>
+        <li><a href="#">주의 사항</a></li>
+    </ul>
+</body>
+</html>
