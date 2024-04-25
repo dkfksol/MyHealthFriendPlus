@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HealthApp</string>
+    <string name="strBtn1">Login</string>
+    <string name="health_care">Health Care</string>
+    <string name="with_smart_mirror">With Smart Mirror</string>
+    <string name="email">Email</string>
+    <string name="back">이전</string>
+    <string name="main">Main(개발중)</string>
+</resources>
