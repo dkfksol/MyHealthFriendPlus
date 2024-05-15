@@ -2,6 +2,7 @@ package com.example.healthapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
@@ -10,8 +11,8 @@ import android.widget.Toast;
 public class EmailDataSource {
 
     private SQLiteDatabase database;
-    private DatabaseHelper dbHelper;
-    private Context mContext;
+    private final DatabaseHelper dbHelper;
+    private final Context mContext;
 
     public EmailDataSource(Context context) {
         mContext = context;
@@ -38,11 +39,15 @@ public class EmailDataSource {
         values.put(DatabaseHelper.COLUMN_EMAIL, email);
         long insertId = database.insert(DatabaseHelper.TABLE_NAME, null, values);
         if (insertId == -1) {
-            // 삽입이 실패한 경우 처리할 코드를 여기에 추가
             Toast.makeText(mContext, "이메일 저장에 실패했습니다.", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(mContext, "이메일이 성공적으로 저장되었습니다.", Toast.LENGTH_SHORT).show();
         }
     }
-}
 
+    public boolean isEmailExists(String email) {
+        // 데이터베이스에서 이메일이 존재하는지 확인하는 쿼리 실행
+        long count = DatabaseUtils.queryNumEntries(database, DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_EMAIL + " = ?", new String[]{email});
+        return count > 0;
+    }
+}

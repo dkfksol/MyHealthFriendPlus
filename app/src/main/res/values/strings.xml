@@ -6,4 +6,5 @@
     <string name="email">Email</string>
     <string name="back">이전</string>
     <string name="main">Main(개발중)</string>
+    <string name="status">[운동현황]</string>
 </resources>

@@ -31,11 +31,20 @@ public class Login extends AppCompatActivity {
                 // 이메일이 비어있을 경우 경고 메시지 표시
                 Toast.makeText(Login.this, "이메일을 입력해주세요.", Toast.LENGTH_SHORT).show();
             } else {
-                // 이메일이 비어있지 않을 경우 데이터베이스에 저장
-                dataSource.insertEmail(email);
-                // 화면 전환 코드
-                Intent intent = new Intent(Login.this, MainScreen.class);
-                startActivity(intent);
+                // 이메일이 비어있지 않을 경우 데이터베이스에 저장(데이터베이스에 이메일이 없을 경우만)
+                if (dataSource.isEmailExists(email)) {
+                    // 화면 전환 코드
+                    Intent intent = new Intent(Login.this, MainScreen.class);
+                    intent.putExtra("email", email);
+                    startActivity(intent);
+                }
+                else {
+                    dataSource.insertEmail(email);
+                    // 화면 전환 코드
+                    Intent intent = new Intent(Login.this, MainScreen.class);
+                    intent.putExtra("email", email);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -54,7 +63,7 @@ public class Login extends AppCompatActivity {
         }
 
         this.backPressedOnce = true;
-        Toast.makeText(this, "한 번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "한번 더 누르면 종료합니다.", Toast.LENGTH_SHORT).show();
 
         new android.os.Handler().postDelayed(() -> backPressedOnce = false, 2000);
     }
