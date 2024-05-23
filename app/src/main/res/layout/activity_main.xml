@@ -78,7 +78,44 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <!-- 본문3 인바디 정보 LinearLayout -->
+    <LinearLayout
+        android:id="@+id/content3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:lineSpacingMultiplier="1.2">
+
+        <!-- 체중 -->
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="체중: 70kg"
+            android:textSize="18sp" />
+
+        <!-- 체지방률 -->
+        <TextView
+            android:id="@+id/bodyFatPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="체지방률: 15%"
+            android:textSize="18sp" />
+
+        <!-- 근육량 -->
+        <TextView
+            android:id="@+id/muscleMass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="근육량: 55kg"
+            android:textSize="18sp" />
+
+    </LinearLayout>
     <!-- 본문3 TextView -->
+    <!--
     <TextView
         android:id="@+id/content3"
         android:layout_width="wrap_content"
@@ -89,4 +126,5 @@
         android:lineSpacingMultiplier="1.2"
         android:text="@string/content3"
         android:textSize="18sp" />
+    -->
 </LinearLayout>

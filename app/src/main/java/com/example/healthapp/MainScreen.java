@@ -2,6 +2,7 @@ package com.example.healthapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -23,6 +24,15 @@ public class MainScreen extends AppCompatActivity {
             Intent intent = new Intent(MainScreen.this, InputData.class);
             startActivity(intent);
         });
+
+        // 인바디 정보 설정
+        TextView weightTextView = findViewById(R.id.weight);
+        TextView bodyFatPercentageTextView = findViewById(R.id.bodyFatPercentage);
+        TextView muscleMassTextView = findViewById(R.id.muscleMass);
+
+        weightTextView.setText("체중: 70kg");
+        bodyFatPercentageTextView.setText("체지방률: 15%");
+        muscleMassTextView.setText("근육량: 55kg");
     }
 
     @Override
