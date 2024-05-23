@@ -23,6 +23,7 @@
         </activity>
 
         <activity android:name=".MainScreen" />
+        <activity android:name=".InputData" />
 
     </application>
 

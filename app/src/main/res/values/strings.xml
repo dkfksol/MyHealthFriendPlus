@@ -7,4 +7,14 @@
     <string name="back">이전</string>
     <string name="main">Main(개발중)</string>
     <string name="status">[운동현황]</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="todo">운동결과를 입력합니다.</string>
+    <string name="todo1">도움말</string>
+    <string name="title1">[운동 현황]</string>
+    <string name="content1"><![CDATA[>>본문1]]></string>
+    <string name="title2">[최근 운동 기록]</string>
+    <string name="content2"><![CDATA[>>본문2]]></string>
+    <string name="title3">[인바디 정보]</string>
+    <string name="content3"><![CDATA[>>본문3]]></string>
 </resources>
