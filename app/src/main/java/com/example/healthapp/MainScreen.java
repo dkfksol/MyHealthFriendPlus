@@ -2,6 +2,7 @@ package com.example.healthapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,8 @@ public class MainScreen extends AppCompatActivity {
     private boolean backPressedOnce = false;
 
     private FloatingActionButton inputDataButton;
+    private Button intputFoodButton;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,12 @@ public class MainScreen extends AppCompatActivity {
             startActivity(intent);
         });
 
+        intputFoodButton = findViewById(R.id.FoodInsertButton);
+        intputFoodButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainScreen.this, FoodMainActivity.class);
+            startActivity(intent);
+        });
+
         // 인바디 정보 설정
         TextView weightTextView = findViewById(R.id.weight);
         TextView bodyFatPercentageTextView = findViewById(R.id.bodyFatPercentage);
@@ -33,6 +42,12 @@ public class MainScreen extends AppCompatActivity {
         weightTextView.setText("체중: 70kg");
         bodyFatPercentageTextView.setText("체지방률: 15%");
         muscleMassTextView.setText("근육량: 55kg");
+
+        button = findViewById(R.id.asktomirror);
+        button.setOnClickListener(view -> {
+            Intent intent = new Intent(MainScreen.this, TempTest_12.class);
+            startActivity(intent);
+        });
     }
 
     @Override

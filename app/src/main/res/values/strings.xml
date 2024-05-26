@@ -17,4 +17,7 @@
     <string name="content2"><![CDATA[>>본문2]]></string>
     <string name="title3">[인바디 정보]</string>
     <string name="content3"><![CDATA[>>본문3]]></string>
+    <string name="login_text">연동 테스트 로그인</string>
+    <string name="main_text">연동 테스트</string>
+    <string name="RecFood">식단추천</string>
 </resources>

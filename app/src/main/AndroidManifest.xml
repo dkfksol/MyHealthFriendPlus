@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -24,6 +26,13 @@
 
         <activity android:name=".MainScreen" />
         <activity android:name=".InputData" />
+        <activity android:name="._MainActivity_" />
+        <activity android:name="._Login_"
+            tools:ignore="DuplicateActivity" />
+        <activity android:name=".TempTest_12"/>
+        <activity android:name=".FoodInputActivity"/>
+        <activity android:name=".FoodMainActivity"/>
+        <activity android:name=".DietRecommendationActivity"/>
 
     </application>
 
