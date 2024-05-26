@@ -1,3 +1,8 @@
+## 개요
+# 기초 캡스톤 헬스를 미뤄?(mirror) 팀 
+앱 개발 파트 결과물
+
+## 참고자료
 <p align="center">
   <img src="https://github.com/ha-jinwoo/CapStone-APP-ResultVideo/blob/master/Capstoneresult/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" />
 </p>
