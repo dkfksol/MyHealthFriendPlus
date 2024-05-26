@@ -7,14 +7,13 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/summaryTextView"
         android:layout_marginBottom="16dp" />
 
     <TextView
         android:id="@+id/summaryTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/calorieBar"
+        android:layout_below="@+id/recyclerView"
         android:layout_marginBottom="8dp"
         android:text="Summary"
         android:textSize="18sp" />
@@ -24,7 +23,7 @@
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/fab"
+        android:layout_below="@+id/summaryTextView"
         android:layout_marginBottom="16dp"
         android:max="2000" />
 
@@ -36,7 +35,7 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_input_add"
-        android:contentDescription="TODO"
+        android:contentDescription="InputFoodData"
         android:layout_alignParentRight="true" />
 
     <TextView
