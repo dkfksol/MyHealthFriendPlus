@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainScreen">
+
+    <!-- 상단 버튼 레이아웃 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+
+        <!-- "+" 버튼 -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/inputDataButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:focusable="true"
+            app:srcCompat="@android:drawable/ic_input_add"
+            android:contentDescription="@string/todo" />
+
+        <!-- 여백을 채워서 버튼을 우측으로 배치 -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+        <!-- 새로운 버튼 -->
+        <Button
+            android:id="@+id/FoodInsertButton"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_margin="8dp"
+            android:text="@string/RecFood" />
+    </LinearLayout>
+
+    <!-- 제목1  -->
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/title1"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- 본문1 -->
+    <TextView
+        android:id="@+id/content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/content1"
+        android:textSize="18sp" />
+
+    <!-- 제목2 -->
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/title2"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- 본문2 -->
+    <TextView
+        android:id="@+id/content2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/content2"
+        android:textSize="18sp" />
+
+    <!-- 제목3 -->
+    <TextView
+        android:id="@+id/title3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/title3"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- 본문3 인바디 정보 -->
+    <LinearLayout
+        android:id="@+id/content3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:lineSpacingMultiplier="1.2">
+
+        <!-- 체중 -->
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="체중: 70kg"
+            android:textSize="18sp" />
+
+        <!-- 체지방률 -->
+        <TextView
+            android:id="@+id/bodyFatPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="체지방률: 15%"
+            android:textSize="18sp" />
+
+        <!-- 근육량 -->
+        <TextView
+            android:id="@+id/muscleMass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="근육량: 55kg"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/asktomirror"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="연동 테스트"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
