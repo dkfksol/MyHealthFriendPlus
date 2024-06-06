@@ -24,7 +24,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainScreen" />
+        <activity
+            android:name=".MainScreen">
+        </activity>
         <activity android:name=".InputData" />
         <activity android:name="._MainActivity_" />
         <activity android:name="._Login_"

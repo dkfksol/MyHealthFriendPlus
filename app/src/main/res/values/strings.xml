@@ -20,4 +20,8 @@
     <string name="login_text">연동 테스트 로그인</string>
     <string name="main_text">연동 테스트</string>
     <string name="RecFood">식단추천</string>
+    <string-array name="gender_array">
+        <item>남자</item>
+        <item>여자</item>
+    </string-array>
 </resources>
