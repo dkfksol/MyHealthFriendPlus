@@ -116,30 +116,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <!-- 데이터 입력을 위한 제목 -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="운동 목표 입력"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"/>
+        <!-- 데이터 입력을 위한 제목 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="운동 목표 입력"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"/>
 
-    <!-- 데이터를 입력하는 EditText -->
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="목표운동시간을 입력하세요"
-        android:inputType="text"/>
-    <!-- 데이터를 입력하는 EditText -->
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="목표소모열량을 입력하세요"
-        android:inputType="text"/>
+        <!-- 데이터를 입력하는 EditText -->
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="목표운동시간을 입력하세요"
+            android:inputType="text"/>
+        <!-- 데이터를 입력하는 EditText -->
+        <EditText
+            android:id="@+id/editText7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="목표소모열량을 입력하세요"
+            android:inputType="text"/>
 
     <!-- 확인 버튼 -->
     <Button
