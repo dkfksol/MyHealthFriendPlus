@@ -6,15 +6,27 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "user_emails.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "PhysicalData.db";
+    private static final int DATABASE_VERSION = 3;
 
-    static final String TABLE_NAME = "emails";
+    static final String TABLE_NAME = "PhysicalData";
     static final String COLUMN_EMAIL = "email";
+    static final String COLUMN_WEIGHT = "weight";
+    static final String COLUMN_AGE = "age";
+    static final String COLUMN_HEIGHT = "height";
+    static final String COLUMN_NECK_CIRCUMFERENCE = "neckCircumference";
+    static final String COLUMN_WAIST_CIRCUMFERENCE = "waistCircumference";
+    static final String COLUMN_GENDER = "gender";
 
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + TABLE_NAME + " (" +
-                    COLUMN_EMAIL + " TEXT)";
+                    COLUMN_EMAIL + " TEXT," +
+                    COLUMN_WEIGHT + " INTEGER," +
+                    COLUMN_AGE + " INTEGER," +
+                    COLUMN_HEIGHT + " INTEGER," +
+                    COLUMN_NECK_CIRCUMFERENCE + " INTEGER," +
+                    COLUMN_WAIST_CIRCUMFERENCE + " INTEGER," +
+                    COLUMN_GENDER + " TEXT)";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

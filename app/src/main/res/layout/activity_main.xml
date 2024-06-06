@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,8 +20,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="8dp">
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
 
                 <!-- "+" 버튼 -->
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -30,17 +29,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:contentDescription="@string/todo"
                     android:focusable="true"
-                    app:srcCompat="@android:drawable/ic_input_add"
-                    android:contentDescription="@string/todo" />
+                    app:srcCompat="@android:drawable/ic_input_add" />
 
                 <!-- 여백을 채워서 버튼을 우측으로 배치 -->
                 <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
-                <!-- 새로운 버튼 -->
+                <!-- 식단추천버튼 -->
                 <Button
                     android:id="@+id/FoodInsertButton"
                     android:layout_width="wrap_content"
@@ -66,10 +65,10 @@
                 android:id="@+id/exerciseStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp">
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/exerciseGoal"
@@ -92,13 +91,27 @@
                     android:text="소모 열량: 275 / 450 kcal"
                     android:textSize="18sp" />
 
-                <!-- 그래프를 위한 공간 (그래프는 실제로 Java 또는 Kotlin에서 설정해야 합니다) -->
-                <View
-                    android:id="@+id/exerciseGraph"
+                <!-- 운동 목표 달성률 파이 차트 -->
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/exerciseGoalPieChart"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray"/>
+                    android:layout_height="300dp"
+                    android:layout_marginTop="16dp" />
+
+                <!-- 운동 시간 파이 차트 -->
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/exerciseTimePieChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="16dp" />
+
+                <!-- 소모 열량 파이 차트 -->
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/caloriesBurnedPieChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="16dp" />
+
             </LinearLayout>
 
             <!-- 제목2: 최근 운동 기록 -->
@@ -118,10 +131,10 @@
                 android:id="@+id/recentExerciseRecord"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp">
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal">
 
                 <!-- 운동 사진 공간 -->
                 <ImageView
@@ -137,7 +150,7 @@
                     android:id="@+id/exerciseName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="스쿼트, 푸시업"
+                    android:text="스쿼트"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -158,44 +171,31 @@
                 android:id="@+id/content3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:lineSpacingMultiplier="1.2">
+                android:lineSpacingMultiplier="1.2"
+                android:orientation="vertical">
 
-                <!-- 체중 -->
                 <TextView
-                    android:id="@+id/weight"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/resultTextView"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="체중:"
-                    android:textSize="18sp" />
-
-                <!-- 체지방률 -->
-                <TextView
-                    android:id="@+id/bodyFatPercentage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="체지방률:"
-                    android:textSize="18sp" />
-
-                <!-- 근육량 -->
-                <TextView
-                    android:id="@+id/muscleMass"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="근육량:"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:text="정보 입력이 되지 않았습니다.\n정보를 입력해주세요."
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:padding="16dp"/>
             </LinearLayout>
 
             <Button
                 android:id="@+id/asktomirror"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="연동 테스트"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:text="연동 테스트" />
 
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
+

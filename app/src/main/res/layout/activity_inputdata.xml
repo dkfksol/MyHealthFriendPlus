@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="데이터1 입력"
+        android:text="체중 입력"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -20,14 +20,14 @@
         android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="데이터1을 입력하세요"
+        android:hint="체중(kg)을 입력하세요"
         android:inputType="text"/>
 
     <!-- 데이터 입력을 위한 제목 -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="데이터2 입력"
+        android:text="나이 입력"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -38,14 +38,14 @@
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="데이터2를 입력하세요"
+        android:hint="나이를 입력하세요"
         android:inputType="text"/>
 
     <!-- 데이터 입력을 위한 제목 -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="데이터3 입력"
+        android:text="키(신장) 입력"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -56,14 +56,14 @@
         android:id="@+id/editText3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="데이터3을 입력하세요"
+        android:hint="키(cm)를 입력하세요"
         android:inputType="text"/>
 
     <!-- 데이터 입력을 위한 제목 -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="데이터4 입력"
+        android:text="목둘레 입력"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -74,14 +74,14 @@
         android:id="@+id/editText4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="데이터4를 입력하세요"
+        android:hint="목둘레(cm)를 입력하세요"
         android:inputType="text"/>
 
     <!-- 데이터 입력을 위한 제목 -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="데이터5 입력"
+        android:text="허리둘레 입력"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -92,8 +92,24 @@
         android:id="@+id/editText5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="데이터5를 입력하세요"
+        android:hint="허리둘레(cm)를 입력하세요"
         android:inputType="text"/>
+
+    <!-- 데이터 입력을 위한 제목 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="성별 입력"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 데이터를 선택하는 Spinner -->
+    <Spinner
+        android:id="@+id/spinnerGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <!-- 확인 버튼 -->
     <Button
