@@ -73,7 +73,29 @@ public class MainScreen extends AppCompatActivity {
         // 인바디 정보 설정
         resultTextView = findViewById(R.id.resultTextView);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        int weight = sharedPreferences.getInt("weight", 0);
+        int age = sharedPreferences.getInt("age", 0);
+        int height = sharedPreferences.getInt("height", 0);
+        String neckCircumference = sharedPreferences.getString("neckCircumference", "");
+        String waistCircumference = sharedPreferences.getString("waistCircumference", "");
+        String gender = sharedPreferences.getString("gender", "");
+
         Intent intent = getIntent();
+        if (weight != 0 && age != 0 && height != 0 && !neckCircumference.isEmpty() && !waistCircumference.isEmpty() && !gender.isEmpty()) {
+            // Perform calculations (These are just example calculations, you should replace them with real formulas)
+            double bodyFatPercentage = calculateBodyFatPercentage(weight, height, Integer.parseInt(neckCircumference), Integer.parseInt(waistCircumference), gender);
+            double muscleMass = calculateMuscleMass(weight, bodyFatPercentage);
+
+            String result = "체중: " + weight + "kg\n" +
+                    "체지방률: " + String.format("%.2f", bodyFatPercentage) + "%\n" +
+                    "근육량: " + String.format("%.2f", muscleMass) + "kg";
+
+            resultTextView.setText(result);
+        } else {
+            resultTextView.setText("데이터가 입력되기 전입니다. 데이터를 입력해주세요.");
+        }
+        /*
         if (intent.hasExtra("weight") && intent.hasExtra("age") && intent.hasExtra("height")
                 && intent.hasExtra("neckCircumference") && intent.hasExtra("waistCircumference")) {
             int weight = intent.getIntExtra("weight", 0);
@@ -93,6 +115,7 @@ public class MainScreen extends AppCompatActivity {
         } else {
             resultTextView.setText("데이터가 입력되기 전입니다. 데이터를 입력해주세요.");
         }
+        */
 
         button = findViewById(R.id.asktomirror);
         button.setOnClickListener(view -> {
@@ -149,11 +172,17 @@ public class MainScreen extends AppCompatActivity {
         exercisePhoto.setImageResource(drawableResId);
     }
 
-    private double calculateBodyFatPercentage(int weight, int height, int neckCircumference, int waistCircumference) {
+    // Dummy calculation for body fat percentage (replace with real formula)
+    private double calculateBodyFatPercentage(int weight, int height, int neckCircumference, int waistCircumference, String gender) {
         // Example formula (not accurate)
-        return (waistCircumference - neckCircumference) * 0.1 + (height - weight) * 0.1;
+        double bodyFat = (waistCircumference - neckCircumference) * 0.1 + (height - weight) * 0.1;
+        if ("Female".equalsIgnoreCase(gender)) {
+            bodyFat += 5;  // Example adjustment for females (not accurate)
+        }
+        return bodyFat;
     }
 
+    // Dummy calculation for muscle mass (replace with real formula)
     private double calculateMuscleMass(int weight, double bodyFatPercentage) {
         // Example formula (not accurate)
         return weight * (1 - bodyFatPercentage / 100);
