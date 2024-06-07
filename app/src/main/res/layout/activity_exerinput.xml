@@ -21,7 +21,26 @@
         android:id="@+id/exerNameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="체중(kg)을 입력하세요"
+        android:hint="이름을 입력하세요"
+        android:inputType="text"/>
+
+    <!-- 데이터 유형 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="운동 시간 입력"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 입력란 -->
+    <EditText
+        android:id="@+id/exerDurationEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="운동 시간(분)을 입력하세요"
         android:inputType="text"/>
 
     <!-- 데이터 유형 -->
@@ -40,7 +59,7 @@
         android:id="@+id/exerSetNumEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="나이를 입력하세요"
+        android:hint="완료한 운동의 세트 수(회)를 입력하세요"
         android:inputType="text"/>
 
     <!-- 데이터 유형 -->
@@ -59,7 +78,7 @@
         android:id="@+id/exerRepNumEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="키(cm)를 입력하세요"
+        android:hint="완료한 운동의 세트 당 렙 수(회)를 입력하세요"
         android:inputType="text"/>
 
     <!-- 입력 완료 버튼 -->
@@ -69,5 +88,5 @@
         android:layout_height="wrap_content"
         android:text="입력"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="30dp"/>
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.healthapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import java.util.Date;
 
 public class ExerciseInputData extends AppCompatActivity {
     private EditText exerNameEdit;
+    private EditText exerDurationEdit;
     private EditText exerSetNumEdit;
     private EditText exerRepNumEdit;
     private Button exerInputButton;
@@ -29,6 +31,7 @@ public class ExerciseInputData extends AppCompatActivity {
         setContentView(R.layout.activity_exerinput);
 
         exerNameEdit = findViewById(R.id.exerNameEdit);
+        exerDurationEdit = findViewById(R.id.exerDurationEdit);
         exerSetNumEdit = findViewById(R.id.exerSetNumEdit);
         exerRepNumEdit = findViewById(R.id.exerRepNumEdit);
         exerInputButton = findViewById(R.id.exerInputButton);
@@ -37,6 +40,7 @@ public class ExerciseInputData extends AppCompatActivity {
 
         exerInputButton.setOnClickListener(v -> {
             String exerName = exerNameEdit.getText().toString();
+            String exerDuration = exerDurationEdit.getText().toString();
             String exerSetNum = exerSetNumEdit.getText().toString();
             String exerRepNum = exerRepNumEdit.getText().toString();
 
@@ -44,6 +48,7 @@ public class ExerciseInputData extends AppCompatActivity {
             String exerDate = dateFormat.format(new Date((long) System.currentTimeMillis()));
             if (!TextUtils.isEmpty(exerName) && !TextUtils.isEmpty(exerSetNum) && !TextUtils.isEmpty(exerRepNum)) {
                 try {
+                    int duration = Integer.parseInt(exerDuration);
                     int set = Integer.parseInt(exerSetNum);
                     int rep = Integer.parseInt(exerRepNum);
 
@@ -52,11 +57,15 @@ public class ExerciseInputData extends AppCompatActivity {
                     ContentValues values = new ContentValues();
                     values.put("exer_date", exerDate);
                     values.put("exer_name", exerName);
+                    values.put("exer_duration", duration);
                     values.put("num_sets", set);
                     values.put("num_reps", rep);
                     database.insert("exerciseTBL", null, values);
 
-                    onDestroy();
+                    Intent intent = new Intent(ExerciseInputData.this, MainScreen.class);
+                    intent.putExtra("exerName", exerName);
+                    intent.putExtra("exerDuration", duration);
+                    startActivity(intent);
                 } catch (NumberFormatException e) {
                     Toast.makeText(ExerciseInputData.this, "숫자를 올바르게 입력하세요", Toast.LENGTH_SHORT).show();
                 }
@@ -74,10 +83,11 @@ public class ExerciseInputData extends AppCompatActivity {
 
         @Override
         public void onCreate(SQLiteDatabase db) {
-//            DB 생성. 운동시간(텍스트), 운동이름(텍스트), 세트수(정수), 세트당렙수(정수)
+//            DB 생성. 운동시간(텍스트), 운동이름(텍스트), 운동지속시간(정수), 세트수(정수), 세트당렙수(정수)
             db.execSQL("CREATE TABLE exerciseTBL (" +
                     "exer_datetime TEXT PRIMARY KEY," +
                     "exer_name TEXT," +
+                    "num_duration INTEGER," +
                     "num_sets INTEGER," +
                     "num_reps INTEGER);");
         }

@@ -34,6 +34,7 @@ public class MainScreen extends AppCompatActivity {
     private PieChart exerciseTimePieChart;
     private PieChart caloriesBurnedPieChart;
     private ImageView exercisePhoto;
+    private TextView exerciseName;
     private TextView resultTextView;
 
     @Override
@@ -68,7 +69,7 @@ public class MainScreen extends AppCompatActivity {
         exercisePhoto = findViewById(R.id.exercisePhoto);
 
         // drawable 리소스를 사용하여 이미지 설정
-        setupExercisePhoto(R.drawable.squart);
+
 
         // 인바디 정보 설정
         resultTextView = findViewById(R.id.resultTextView);
@@ -117,9 +118,28 @@ public class MainScreen extends AppCompatActivity {
         }
         */
 
+        exerciseName = findViewById(R.id.exerciseName);
+        String inputExerName = intent.getStringExtra("exerName");
+        if (inputExerName != null && intent.getIntExtra("exerDuration", 0) != 0) {
+            if (inputExerName.equals("스쿼트"))
+                setupExercisePhoto(R.drawable.squart);
+
+            else if (inputExerName.equals("푸쉬업"))
+                setupExercisePhoto(R.drawable.pushup);
+
+            else if (inputExerName.equals("덤벨컬"))
+                setupExercisePhoto(R.drawable.curl);
+
+            String currentExrcise = intent.getStringExtra("exerName");
+
+            exerciseName.setText(currentExrcise);
+        } else {
+            exerciseName.setText("운동 기록을 기입해주세요.");
+        }
+
         button = findViewById(R.id.asktomirror);
         button.setOnClickListener(view -> {
-            Intent intent01 = new Intent(MainScreen.this, TempTest_12.class);
+            Intent intent01 = new Intent(MainScreen.this, ExerciseInputData.class);
             startActivity(intent01);
         });
     }

@@ -193,7 +193,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="연동 테스트" />
+                android:text="운동 데이터 기록" />
 
         </LinearLayout>
     </ScrollView>
